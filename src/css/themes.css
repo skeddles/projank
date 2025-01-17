@@ -3,6 +3,7 @@
 
 .App.theme-sky {
 	--bg: #89d4ff;
+	--bg-gradient: #89d4ff00;
 	--fg: #ffffff;
 	--shadow: #3c81d1;
 }
