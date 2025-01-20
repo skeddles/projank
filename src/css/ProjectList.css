@@ -1,7 +1,7 @@
 .ProjectList {
 	list-style-type: none;
 	counter-reset: item;
-	margin: 2em auto;
+	margin: 12em auto 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -10,9 +10,15 @@
 
 	li {
 		counter-increment: item;
-		margin-bottom: 5px;
-		margin: 2em;
+		margin: 1em;
 		display: flex; 
+
+		&:first-child {
+			font-size: 1.5em;
+			border: solid 0.125em var(--shadow);
+			border-radius: 1em;
+			padding: 1em 2em;
+		}
 
 		h2 {
 			display: inline-block;
@@ -41,9 +47,9 @@
 			font-size: 3em;
 			margin-top: -0.125em;
 			font-weight: 700;
-
 			text-align: right;
-			width: 3em;			
+			width: 3em;		
+			pointer-events: none;	
 		}
 	}
 

@@ -1,8 +1,11 @@
 import { useState } from 'react'
 
+import ProjectList from './components/ProjectList'
+import Settings from './components/Settings'
+
 import './css/themes.css'
 import './css/App.css'
-import './css/ProjectList.css'
+
 
 interface Project {
 	title: string;
@@ -69,21 +72,13 @@ function App() {
 
 	const [theme, setTheme] = useState(localStorage.getItem("theme") || "sky");
 
-	return (<div className={"App theme-"+theme} >
+	const [mode, setMode] = useState("view");
 
-		<ol className="ProjectList">
-		{projects.map((project, index) => (
-			<li key={index}>
-				<div className="info">
-					<h2>{project.title}</h2>
-					<p>{project.description}</p>
-				</div>
-				<div className="score">
-					<h2>{project.score}</h2>
-				</div>
-			</li>
-		))}
-		</ol>
+	const [criteria, setCriteria] = useState<string[]>([]);
+	
+	return (<div className={"App theme-"+theme} >
+		<ProjectList projects={projects} />
+		<Settings theme={theme} setTheme={setTheme} criteria={criteria} setCriteria={setCriteria} />
 	</div>)
 }
 
